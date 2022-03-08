@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: "production",
+  watch: true,
   entry: {
     polyfill: 'babel-polyfill',
     app: "./src/index.js"
@@ -28,17 +29,5 @@ module.exports = {
             }
         }
       ],
-  },
-  devServer : {
-      static : {
-          directory: path.resolve(__dirname, "./")
-      },
-      devMiddleware: {
-          publicPath : '/dist',
-          writeToDisk: false,
-          serverSideRender: true
-      },
-      port:3000,
-      compress: true
   }
 };
